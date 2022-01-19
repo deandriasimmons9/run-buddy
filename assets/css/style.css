@@ -11,6 +11,14 @@ body {
   /*I'm a CSS comment */
   /* apply styles to <header> */
   header {
+      background-attachment: fixed;
+      background-position: 80%;
+      background-image: url("../images/hero-bg.jpeg");
+      background-size: cover;
+      background-position: center;
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
       padding: 20px 35px;
       background-color: #39a6b2;
       display: flex;
@@ -72,6 +80,8 @@ body {
   }
   /* Hero Style Start */
   .hero {
+      background-attachment: fixed;
+      background-position: 80%;
       background-image: url(../images/hero-bg.jpeg);
       height: 600px;
       background-size: cover;
@@ -84,6 +94,8 @@ body {
   }
   /* Hero Style End */
   .hero-form {
+      box-shadow: 0 0 10px rgba( 0, 0, 0, 0.5);
+      border-radius: 15px;
       border: 3px solid #024e76;
       background: #fce138;
       padding: 20px;
@@ -101,6 +113,7 @@ body {
       line-height: 1.2;
   }
   .hero-cta h2 {
+      /* and here */
       font-style: italic;
       font-size: 55px;
       color: #fce138;
@@ -115,6 +128,7 @@ body {
   }
 
   .form-input {
+      border-radius: 10px;
       border: 1px solid #024e76;
       display: black;
       padding: 7px 15px;
@@ -126,7 +140,9 @@ body {
   .hero-form label {
       margin: 0 5px;
   }
-  .hero-form button {
+  .hero-form button:hover {
+    background-color: #39a6b2;
+    border-radius: 10px;
     color: #fce138;
     background-color: #024e76;
     border: none;
@@ -281,6 +297,7 @@ body {
     color:#fce138;
 }
 .contact-form input, .contact-form textarea {
+    border-radius: 10px;
     border: 1px solide #024e76;
     display: block;
     padding: 7px 15px;
@@ -290,7 +307,10 @@ body {
     margin-bottom: 15px;
     margin-top: 5px;
 }
-.contact-form button {
+.contact-form button:hover {
+    color: #fce138;
+    background: #39a6b2;
+    border-radius: 10px;
     width: 100%;
     border: none;
     background: #fce138;
@@ -310,7 +330,7 @@ body {
     margin: 50px auto;
     padding-bottom: 50px;
     width: 80%;
-    border-bottom: 1px solid #39a6b2;
+    
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -335,10 +355,13 @@ body {
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
    header {
+       position: relative;
        padding-bottom: 0;
        justify-content: center;
    }
    header h1 {
+       /* add alongside your existing declarations */
+       text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
        width: 100%;
        text-align: center;
    }
@@ -347,7 +370,12 @@ body {
        width: 100%;
        justify-content: center;
    }
-   header nav ul li a {
+   header nav ul li a:hover {
+       background: #fce138;
+       color: #024e76;
+       border-radius: 15px;
+       text-shadow: none;
+       /* and here */
        font-size: 20px;
    }
    footer h2, footer div {
@@ -419,4 +447,25 @@ body {
     .contact-form {
         order: 3;
     }  
+}
+/* update existing rule with this declaration */
+    .form-input {
+        background-color: rgba(255,255,255, 0.75);
+}
+  
+  /* create a new rule for focus state */
+    .form-input:focus {
+        background-color: rgba(255,255,255, 1);
+        outline: none;
+}
+    .step:nth-child(even) {
+        border-bottom: 1px solid #39a6b2;
+}
+    .step {
+    /* re-add alongside existing declarations */
+        border-bottom: 1px solid #39a6b2;
+}
+  
+    .step:last-child {
+        border-bottom: none;
 }
